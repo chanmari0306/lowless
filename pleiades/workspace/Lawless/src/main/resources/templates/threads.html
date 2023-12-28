@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>スレッド一覧</title>
+</head>
+<body>
+<!--	<p>新規スレッド作成</p>-->
+<!--	<form "threads" method="post">-->
+<!--		<input type="text" name="thread">-->
+<!--		<input type="submit" value="作成する"> -->
+<!--	</form>-->
+	
+<!--	<form "posts" method="get">-->
+	<div th:each="thre:${threadsList}">
+		<p>
+<!--			<form th:action="@{/posts}" method="get">-->
+<!--			<input type="submit" value="${thre.title}" name="${thre.thread_id}">-->
+<!--			<a th:href="@{${thre.thread_id}}">[[${thre.title}]]</a>-->
+			<a th:href="@{'/' + ${thre.thread_id}}"><span th:text="${thre.title}"></span></a>
+<!--			</form>-->
+		</p>
+	</div>
+<!--	<a th:href="@{game}">ゲーム</a>-->
+</body>
+</html>

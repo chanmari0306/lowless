@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>投稿</title>
+</head>
+<body>
+<!--	<h2>ここにthreadsのtitleを表示したい</h2>-->
+	<form th:action="@{tweet}" method="post">
+		<input type="text" name="pos">
+		<input type="submit" value="投稿する"> 
+	</form>
+	<div th:each="pos:${postsList}">
+		<p><span th:text="${pos.user_id}"></span></p>
+		<p><span th:text="${pos.post}"></span></p>
+<!--		<p>[[${pos.user_id}]]:</p>-->
+<!--		<p>[[${pos.post}]]</p>-->
+<!--		${}内にはaddAtributeの""の中の名前を書く-->
+	</div>
+<!--		<a href="logout">ログアウト</a>-->
+<!--		<a href="delete">退会</a>-->
+	<a th:href="@{threads}">スレッド一覧へ</a>
+	<a th:href="@{logout}">ログアウト</a>
+	<a th:href="@{delete}">退会</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>新規登録</title>
+</head>
+<body>
+	<h1>新規登録画面</h1>
+<!--	<form action="show" method="get">-->
+<!--		名前:<input type="text" name="name"><br>-->
+<!--		年齢:<input type="number"name="age"><br>-->
+<!--		パスワード:<input type="password" name="pass"><br>-->
+	<form th:action="@{registerOK}" method="post" th:object="${accountUser}">
+		名前:<input type="text" th:field="*{name}"><br>
+		年齢:<input type="number" th:field="*{age}"><br>
+		メールアドレス:<input type="text" th:field="*{mail}"><br>
+		ユーザーID:<input type="text" th:field="*{user_id}"><br>
+		パスワード:<input type="password" th:field="*{pass}"><br>
+		<input type="submit" value="新規登録">
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+		</ul>
+	</form>
+	<a th:href="@{welcome}">戻る</a>
+</body>
+</html>

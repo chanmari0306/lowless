@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>退会画面</title>
+</head>
+<body>
+	<h1>退会</h1>
+	<p>以下の内容を削除しますか？</p>
+	<ul>
+		<li>[[${accountUser.name}]]</li><br>
+<!--		ここで表示する内容要検討-->
+	</ul>
+<!--	<a th:href="@{game}">戻る</a>-->
+	<a th:href="@{deleteOK}">退会する</a>
+</body>
+</html>
